@@ -1,7 +1,10 @@
 # resty.dump
 A useful LUA scripts for openresty environment. God speed with your coding! use it any you want~:)
-## synopis
-    Document as comment below:
+
+Synopsis
+========
+Document as comment below:
+```lua
     ---BY yorkane
     ---dump
     ---@param obj table @object to dump
@@ -47,9 +50,10 @@ A useful LUA scripts for openresty environment. God speed with your coding! use 
     --- it will return well formatted function stub with parameters arrays( the param name will be lost due to the lua vm)
     --- ALSO THE CODE SOURCE FILE AND LINE NUMBER, IT'S VERY USEFUL TO DETECT THE CLASS INHERTS RELATIONS.
     function parse_code()
-
+```
 # usage:
-
+#
+```nginx
     location /test.lua {
       content_by_lua_block {
         local cookie = require("resty.cookie")
@@ -84,7 +88,9 @@ A useful LUA scripts for openresty environment. God speed with your coding! use 
         log('Winner Winner', 'Chicken dinner!', foo, table, ngx)
         }
     }
+```
 # demo result:
+```lua
     foo = {
      say = function(arg1) end,			-- @./approot/test.lua @line: 25
      obj_list = {
@@ -168,6 +174,6 @@ A useful LUA scripts for openresty environment. God speed with your coding! use 
       crc32_long = function(arg) end,			-- =[C] @line: -1
       eof = function(arg) end,			-- =[C] @line: -1
       ...
-
+```
 # screen shots
 ![image](https://raw.githubusercontent.com/yorkane/lua-resty.dump/master/demo.png)
