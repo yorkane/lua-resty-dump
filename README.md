@@ -1,7 +1,9 @@
 # resty.dump
 A useful LUA scripts for openresty environment.
 ## synopis
-    ---dump
+    Document as comment below:
+    ---BY yorkane
+    ---dump
     ---@param obj table @object to dump
     ---@param name string
     function dump(obj, name)
@@ -59,11 +61,19 @@ A useful LUA scripts for openresty environment.
         require('dump')
         say('<pre>')
         local foo = {
-          name = 'hello',
-          say = function(word, bluh)
-          end,
-          is_bad = false,
-          id = 123456
+         name = 'hello',
+         say = function(word, bluh)
+         end,
+         is_bad = false,
+         id = 123456,
+         obj = {
+          key = 'key',
+          value = 119,
+          is_bad = true
+         },
+         num_list = { 1, 2, 3, 4, 5 },
+         str_list = { 'a', 'b', 'c' },
+         obj_list = { { name = 1, value = 2 }, { name = 1, value = 2 }, { name = 1, value = 2 }, { name = 1, value = 2 } }
         }
 
         say(dump_lua(foo, 'foo'))
@@ -73,11 +83,37 @@ A useful LUA scripts for openresty environment.
     }
 # demo result:
     foo = {
-      say = function(arg1) end,			-- @./approot/test.lua @line: 25
-      is_bad = false,
-      name = "hello",
-      id = 123456
+     say = function(arg1) end,			-- @./approot/test.lua @line: 25
+     obj_list = {
+     {
+      name = 1,
+      value = 2
+     },
+     {
+      name = 1,
+      value = 2
+     },
+     {
+      name = 1,
+      value = 2
+     },
+     {
+      name = 1,
+      value = 2
+     }
+     },
+     is_bad = false,
+     id = 123456,
+     str_list = {"a", "b", "c"},
+     obj = {
+      is_bad = true,
+      key = "key",
+      value = 119
+     },
+     name = "hello",
+     num_list = {1, 2, 3, 4, 5}
     }
+
 
 
     ---@class lrucache
