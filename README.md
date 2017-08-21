@@ -79,6 +79,9 @@ A useful LUA scripts for openresty environment. God speed with your coding! use 
         say(dump_lua(foo, 'foo'))
         say(dump_class(cache, 'lrucache'))
         dump(ngx, 'ngx')
+        --- nginx log output
+        dump_log(foo, 'hello')
+        log('Winner Winner', 'Chicken dinner!', foo, table, ngx)
         }
     }
 # demo result:
