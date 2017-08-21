@@ -1,5 +1,5 @@
 # resty.dump
-A useful LUA scripts for openresty environment.
+A useful LUA scripts for openresty environment. God speed with your coding! use it any you want~:)
 ## synopis
     Document as comment below:
     ---BY yorkane
@@ -167,3 +167,4 @@ A useful LUA scripts for openresty environment.
       ...
 
 # screen shots
+![image](https://raw.githubusercontent.com/yorkane/lua-resty.dump/master/demo.png)
